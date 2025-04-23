@@ -8,6 +8,7 @@
     <p><strong>Jenis:</strong> {{ ucfirst($reminder->type) }}</p>
 
     <a href="{{ route('reminders.edit', $reminder->id) }}" class="btn btn-warning">Edit</a>
+    
     <form action="{{ route('reminders.destroy', $reminder->id) }}" method="POST" class="d-inline">
         @csrf
         @method('DELETE')
