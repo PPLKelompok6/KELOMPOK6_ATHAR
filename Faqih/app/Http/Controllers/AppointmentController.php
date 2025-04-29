@@ -42,7 +42,7 @@ class AppointmentController extends Controller
         $dayOfWeek = strtolower($appointmentDateTime->format('l'));
         $time = $appointmentDateTime->format('H:i:s');
 
-        // Validasi jadwal dokter
+        // Validasi jadwal dokter terbaru
         $doctorSchedule = DoctorSchedule::where('doctor_id', $validated['doctor_id'])
             ->where('day', $dayOfWeek)
             ->where('start_time', '<=', $time)
